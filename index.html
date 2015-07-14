@@ -13,7 +13,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://vm-2tti.cloudapp.net:8080/apex/f?p=1000:LOGIN_JQM_SMARTPHONE:6435570952372', '_self', 'location=yes');
+         var ref = window.open('http://vm-2tti.cloudapp.net:8080/apex/f?p=M_PRP', '_self', 'location=yes');
          ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
          ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
          ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
