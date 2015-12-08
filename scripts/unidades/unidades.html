@@ -1,0 +1,37 @@
+<ion-view view-title="Unidades">
+	<ion-content>
+		<ion-refresher
+			pulling-icon="icon fa fa-refresh"
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+		<div ng-repeat="unidade in vm.unidades" class="row">
+			<div class="card col">
+				<a ng-if="unidade.bo_filho=='true'" class="item item-divider item-icon-right" href="#/app/unidades/{{unidade.cn_unidade}}">
+					<h4><b>{{unidade.an_nome}}</b></h4>
+					<i class="icon fa fa-angle-right"></i>
+				</a>
+				<div ng-if="unidade.bo_filho!='true'" class="item item-divider" >
+					<h4><b>{{unidade.an_nome}}</b></h4>
+				</div>
+
+				<div ng-if="unidade.an_endereco" class="item">
+					<p ng-bind-html="unidade.an_endereco"></p><br>
+					<p ng-bind-html="unidade.an_telefone"></p>
+				</div>
+				
+				<!--
+				<div ng-if="unidade.an_telefone" class="item">
+					<p ng-bind-html="unidade.an_telefone"></p>
+				</div>
+				-->
+				
+				<div ng-if="unidade.an_profissional" class="list">
+					<p ng-bind-html="unidade.an_profissional"></p>
+				</div>
+
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

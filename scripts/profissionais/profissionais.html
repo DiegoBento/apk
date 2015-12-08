@@ -1,0 +1,26 @@
+<ion-view view-title="Profissionais">
+	<ion-content>
+		<ion-refresher
+			pulling-icon="icon fa fa-refresh"
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+		<div ng-repeat="profissional in vm.profissionais" class="row">
+			<div class="card col">
+				<a ng-if="profissional.bo_filho=='true'" class="item item-divider item-icon-right" href="#/app/profissionais/{{profissional.cn_profissional}}">
+					<h4><b>{{profissional.an_nome}}</b></h4>
+					<i class="icon fa fa-angle-right"></i>
+				</a>
+				<div ng-if="profissional.bo_filho!='true'" class="item item-divider" >
+					<h4><b>{{profissional.an_nome}}</b></h4>
+				</div>
+
+				<div class="item">
+					<p ng-bind-html="profissional.an_telefone"></p>
+				</div>
+
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

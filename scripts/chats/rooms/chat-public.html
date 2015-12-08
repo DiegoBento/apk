@@ -1,0 +1,20 @@
+<ion-view view-title="{{vm.loggedUser.displayName}}">
+	<ion-content>
+		<ion-list ng-show="vm.rooms">
+			<ion-item class="item-icon-left"
+				ng-repeat="room in vm.rooms | filter: { private: false, users:vm.loggedUser.uid }"
+				type="item-text-wrap"
+				ng-click="vm.openChatRoom(room.$id)">
+				<i class="icon {{room.icon}}"></i>
+				<h2>{{room.name}}</h2>
+
+				<!--
+				<div ng-repeat="user in room.users">
+					<p>{{user}}</p>
+				</div>
+				-->
+				
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

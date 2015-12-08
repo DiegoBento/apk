@@ -1,0 +1,37 @@
+<ion-view view-title="Eventos - {{vm.calendarDay | amDateFormat: 'MMMM YYYY'}}">
+	<ion-content>
+		<div class="button-bar padding">
+
+			<a class="button button-small"
+				mwl-date-modifier
+				date="vm.calendarDay"
+				decrement="vm.calendarView">
+				Anterior
+			</a>
+
+			<a class="button button-small claim"
+				mwl-date-modifier
+				date="vm.calendarDay"
+				set-to-today>
+				Hoje
+			</a>
+
+			<a class="button button-small"
+				mwl-date-modifier
+				date="vm.calendarDay"
+				increment="vm.calendarView">
+				Próximo
+			</a>
+		</div>
+
+		<mwl-calendar
+			view="vm.calendarView"
+			current-day="vm.calendarDay"
+			events="vm.events"
+			view-title="vm.calendarTitle"
+			on-drill-down-click="vm.onDrillDownClick(obj)"
+			auto-open="true">
+		</mwl-calendar>
+
+	</ion-content>
+</ion-view>

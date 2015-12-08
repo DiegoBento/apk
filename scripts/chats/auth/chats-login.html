@@ -1,0 +1,37 @@
+
+<ion-view view-title="Login">
+	<ion-content class="padding">
+
+		<div class="card">			
+			<div ng-if="vm.loggedUser.displayName" class="item item-divider">
+				Logado com {{vm.loggedUser.displayName}}
+			</div>
+			<div class="list padding">
+				<label ng-if="!vm.loggedUser.isSignedIn" class="item item-input">
+					<span class="input-label">E-mail</span>
+					<input type="text" ng-model="vm.user.email" value="mayrasegui@gmail.com">
+				</label>
+				<label ng-if="!vm.loggedUser.isSignedIn" class="item item-input">
+					<span class="input-label">Senha</span>
+					<input type="password" ng-model="vm.user.password" value="mayra">
+				</label>
+				<button ng-if="!vm.loggedUser.isSignedIn" ng-click="vm.signIn()"
+					class="button button-block button-positive activated">
+					Entrar
+				</button>
+				<button ng-if="!vm.loggedUser.isSignedIn" ng-click="vm.modal.show()"
+					class="button button-block button-outline button-positive ">
+					Registrar
+				</button>
+				<button ng-if="vm.loggedUser.isSignedIn" ng-click="vm.showChatPublic()"
+					class="button button-block button-positive activated">
+					Exibir Grupos
+				</button>
+				<button ng-if="vm.loggedUser.isSignedIn" ng-click="vm.signOut()"
+					class="button button-block button-assertive activated">
+					Sair
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

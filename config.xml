@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="br.com.2tti.scc-demacro" 
+        versionCode="1" 
+        version="0.0.1" 
+        xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:gap="http://phonegap.com/ns/1.0">
+  <name>SCC</name>
+  <description>
+        SCC - Sistema de Comunicação Corporativa
+    </description>
+  <author email="contato@2tti.com.br" href="www.2tti.com.br">
+        2TTI Consultoria
+    </author>
+  <content src="index.html"/>
+  <access origin="*"/>
+  
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="3000"/>
+
+  <icon src="icon.png" />
+  
+  <gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2" />
+</widget>
